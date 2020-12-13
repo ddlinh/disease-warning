@@ -1,0 +1,66 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:10%;
+    top:1%;
+    height:100%;
+    width: 80%;
+    position: absolute;
+}
+#location {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 10px 20px 12px 12px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+#location:focus {outline: 3px solid #ddd;}
+#dropdown-search {
+    position: relative;
+    display: inline-block;
+}
+#dropdown-search a {
+    color: black;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+#dropdown-search a:hover {background-color: #ddd;}
+.provinces {
+    overflow: scroll;
+    height: 500px;
+}
+.weather-info {
+    box-sizing: border-box;
+    padding: 20px 6px 10px;
+}
+.disease-list .disease {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 20px 30px;
+    padding: 20px 30px;
+    border: solid #000 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.disease-list .disease.normal {
+    background-color: rgba(153, 238, 101, 0.768);
+}
+.disease-list .disease.warning {
+    background-color: rgba(250, 243, 51, 0.768);
+}
+.disease-list .disease.danger {
+    background-color: rgba(238, 60, 6, 0.768);
+}
+.prediction {
+    text-align: center;
+}
