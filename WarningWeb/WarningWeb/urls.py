@@ -21,3 +21,5 @@ urlpatterns = [
     path('', views.index),
     path('get_location/', views.get_account_form)
 ]
+
+
