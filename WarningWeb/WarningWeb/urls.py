@@ -19,7 +19,9 @@ from home import views
 
 urlpatterns = [
     path('', views.index),
-    path('get_location/', views.get_account_form)
+    path('get_location/', views.get_position_form),
+    path('test/test_predict/', views.get_date_form),
+    path('test/', views.test)
 ]
 
 

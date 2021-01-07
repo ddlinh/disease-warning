@@ -5,7 +5,7 @@ from joblib import dump, load
 from sklearn.neighbors import KNeighborsRegressor, KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 
-data = pd.read_csv('data_label_2019.csv')
+data = pd.read_csv('data_label.csv')
 
 colsX = [col for col in data.columns if ('mean_mean' in col or 'min_mean' in col or 'max_mean' in col) and 'cloud' not in col]
 colsY = ['Label_AH1N1', 'Label_AH3', 'Label_B']
@@ -30,13 +30,17 @@ model_B = KNeighborsClassifier()
 model_B.fit(trainX, trainY_B)
 dump(model_B, 'B.joblib')
 
-train_h1n1 = model_H1N1.score(trainX, trainY_H1N1)
-train_h3 = model_H3.score(trainX, trainY_H3)
-train_b = model_B.score(trainX, trainY_B)
 
-test_h1n1 = model_H1N1.score(valX, valY['Label_AH1N1'])
-test_h3 = model_H1N1.score(valX, valY['Label_AH3'])
-test_b = model_H1N1.score(valX, valY['Label_B'])
+train_h1n1 = model_H1N1.score(trainX, trainY_H1N1)*100
+train_h3 = model_H3.score(trainX, trainY_H3)*100
+train_b = model_B.score(trainX, trainY_B)*100
 
+test_h1n1 = model_H1N1.score(valX, valY['Label_AH1N1'])*100
+test_h3 = model_H1N1.score(valX, valY['Label_AH3'])*100
+test_b = model_H1N1.score(valX, valY['Label_B'])*100
+
+print('================================== ACCURACY ===========================')
 print('Accuracy on train set: AH1N1 - {}%, AH3 - {}%, B - {}%'.format(train_h1n1, train_h3, train_b))
+print('-----------------------------------------------------------------------')
 print('Accuracy on test set: AH1N1 - {}%, AH3 - {}%, B - {}%'.format(test_h1n1, test_h3, test_b))
+print('=======================================================================')

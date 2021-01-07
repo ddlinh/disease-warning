@@ -5,9 +5,10 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
+import datetime
+
 from selenium.webdriver.chrome.options import Options
-
-
+#from selenium.webdriver.firefox.options import Options
 import re
 import time
 
@@ -15,20 +16,81 @@ chrome_options = Options()
 chrome_options.add_argument("--disable-extensions")
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(executable_path='chromedriver.exe', options=chrome_options)
+#driver = webdriver.Firefox(options=chrome_options)
 
 # Create your views here.
 def index(request):
-    location = request.session.get('location')
-    temp = request.session.get('temp')
-    humid = request.session.get('humidity')
-    violet = request.session.get('violet')
-    h1n1 = request.session.get('h1n1')
-    h3 = request.session.get('h3')
-    b = request.session.get('b')
-
     if request.session.get('location'):
+        location = request.session.get('location')
         del request.session['location']
+    else:
+        location = ""
+
+    if request.session.get('temp'):
+        temp = request.session.get('temp')
+        del request.session['temp']
+    else:
+        temp = "0"
+
+    if request.session.get('humidity'):
+        humid = request.session.get('humidity')    
+        del request.session['humidity']
+    else:
+        humid = "Humidity: 0%"
+
+    if request.session.get('violet'):
+        violet = request.session.get('violet')
+        del request.session['violet']
+    else:
+        violet = "Ultraviolet: Unknown"
+
+    if request.session.get('h1n1'):
+        h1n1 = request.session.get('h1n1')
+        del request.session['h1n1']
+    else:
+        h1n1 = ""
+
+    if request.session.get('h3'):
+        h3 = request.session.get('h3')
+        del request.session['h3']
+    else:
+        h3 = ""
+
+    if request.session.get('b'):
+        b = request.session.get('b')
+        del request.session['b']
+    else:
+        b = ""
+
     return render(request,"homes.html", {'location': location, 'temp': temp, 'humid': humid, 'violet': violet, 'h1n1': h1n1, 'h3': h3, 'b': b})
+
+def test(request):
+    if request.session.get('date'):
+        date = request.session.get('date')
+        del request.session['date']
+    else:
+        date = ""
+
+    if request.session.get('h1n1_test'):
+        h1 = request.session['h1n1_test']
+        del request.session['h1n1_test']
+    else:
+        h1 = ""
+
+    if request.session.get('h3_test'):
+        h3 = request.session['h3_test']
+        del request.session['h3_test']
+    else:
+        h3 = ""
+
+    if request.session.get('b_test'):
+        b = request.session['b_test']
+        del request.session['b_test']
+    else:
+        b = ""
+
+
+    return render(request, "test.html", {'date': date, 'h1n1': h1, 'h3': h3, 'b': b})
 
 def getWeatherByWeek(location):
 
@@ -151,7 +213,22 @@ def getCurrentWeather(location):
 
     return [temp.text, humid, violet]
 
-def get_account_form(request):
+def getHistoricalPredict(weeks, year):
+    weeks = int(weeks)
+    year = int(year)
+    weeks += 2
+    data = pd.read_csv('model/data_2019.csv')
+    selected = [col for col in data.columns if 'uv' not in col and ('mean_mean' in col or 'min_mean' in col or 'max_mean' in col)]
+    dataX = data[(data['year'] == year) & (data['weeks'] == weeks)][selected]
+    from joblib import dump, load
+    h1n1_model = load('model/AH1N1.joblib')
+    h3_model = load('model/AH3.joblib')
+    b_model = load('model/B.joblib')
+    # print(h1n1_model)
+    print(dataX)
+    return [h1n1_model.predict(dataX)[0], h3_model.predict(dataX)[0], b_model.predict(dataX)[0]]
+
+def get_position_form(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
         if form.is_valid():
@@ -172,6 +249,26 @@ def get_account_form(request):
             request.session['h1n1'] = warning[0]
             request.session['h3'] = warning[1]
             request.session['b'] = warning[2]
-
+            print(warning)
         return HttpResponseRedirect('/')
     return render(request, 'homes.html')
+
+def get_date_form(request):
+    if request.method == "POST":
+        form = AccountForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data['date'])
+            # 2021-01-12 / YYYY-MM-DD
+            date = form.cleaned_data['date']
+            request.session['date'] = date
+            d = datetime.datetime.strptime(date, "%Y-%m-%d")
+            weeks, year = d.strftime('%U %Y').split()
+            print(weeks, year)
+            warning = getHistoricalPredict(weeks, year)
+            request.session['h1n1_test'] = warning[0]
+            request.session['h3_test'] = warning[1]
+            request.session['b_test'] = warning[2]
+            print(warning)
+            print(request)
+        return HttpResponseRedirect('/test')
+    return render(request, 'test.html')

@@ -33,6 +33,11 @@ body {
     display: block;
     cursor: pointer;
 }
+
+#dropdown-search a.warning {
+    color: darkred;
+}
+
 #dropdown-search a:hover {background-color: #ddd;}
 .provinces {
     overflow: scroll;
@@ -60,6 +65,7 @@ body {
 }
 .disease-list .disease.danger {
     background-color: rgba(238, 60, 6, 0.768);
+    color: antiquewhite;
 }
 .prediction {
     text-align: center;
