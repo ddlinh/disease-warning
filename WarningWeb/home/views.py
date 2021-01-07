@@ -217,7 +217,7 @@ def getHistoricalPredict(weeks, year):
     weeks = int(weeks)
     year = int(year)
     weeks += 2
-    data = pd.read_csv('model/data_2019.csv')
+    data = pd.read_csv('model/data_label.csv')
     selected = [col for col in data.columns if 'uv' not in col and ('mean_mean' in col or 'min_mean' in col or 'max_mean' in col)]
     dataX = data[(data['year'] == year) & (data['weeks'] == weeks)][selected]
     from joblib import dump, load
@@ -257,9 +257,9 @@ def get_date_form(request):
     if request.method == "POST":
         form = AccountForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data['date'])
+            print(form.cleaned_data['location'])
             # 2021-01-12 / YYYY-MM-DD
-            date = form.cleaned_data['date']
+            date = form.cleaned_data['location']
             request.session['date'] = date
             d = datetime.datetime.strptime(date, "%Y-%m-%d")
             weeks, year = d.strftime('%U %Y').split()
