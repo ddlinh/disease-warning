@@ -15,6 +15,7 @@ body {
     position: absolute;
 }
 #location {
+    outline: none;
     box-sizing: border-box;
     font-size: 16px;
     padding: 10px 20px 12px 12px;
@@ -23,9 +24,11 @@ body {
 }
 #location:focus {outline: 3px solid #ddd;}
 #dropdown-search {
+    overflow: hidden;
     position: relative;
     display: inline-block;
 }
+
 #dropdown-search a {
     color: black;
     padding: 10px 14px;
@@ -39,9 +42,16 @@ body {
 }
 
 #dropdown-search a:hover {background-color: #ddd;}
+#hidingScrollBar{
+    overflow: hidden;
+  }
 .provinces {
-    overflow: scroll;
+    
+    overflow: auto;
     height: 500px;
+    margin-right: -100px;
+    padding-right: 28px;
+    padding-bottom: 15px;
 }
 .weather-info {
     box-sizing: border-box;
@@ -70,3 +80,5 @@ body {
 .prediction {
     text-align: center;
 }
+
+

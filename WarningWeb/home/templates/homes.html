@@ -13,52 +13,10 @@
     <body>
 
         <div class="home-cover">
-            <nav class="navbar navbar-toggleable-md fixed-top navbar-transparent" color-on-scroll="500">
-                <div class="container">
-                    <div class="navbar-translate">
-                        <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-bar"></span>
-                            <span class="navbar-toggler-bar"></span>
-                            <span class="navbar-toggler-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="https://www.example.com">LOGO</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarToggler">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/" target="_blank">
-                                    <i class="fa fa-twitter"></i>
-                                    <p class="hidden-lg-up">Twitter</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/" target="_blank">
-                                    <i class="fa fa-facebook-square"></i>
-                                    <p class="hidden-lg-up">Facebook</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/" target="_blank">
-                                    <i class="fa fa-instagram"></i>
-                                    <p class="hidden-lg-up">Instagram</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                    <p class="hidden-lg-up">GitHub</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.example.com" target="_blank" class="btn btn-danger btn-round">Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+           
             <div class="wrapper">
                 
-                <div class="page-header section-dark" style="background: url('/static/images/6.jpg')">
+                <div class="page-header section-dark" style="background: url('/static/images/3.2.jpg')">
                     
                     <div class="filter"></div>
                     <div class="content-center">
@@ -92,71 +50,73 @@
                     <form id="search" action="get_location/" method="post">{% csrf_token %}
                         <div id="dropdown-search">
                             <input type='text' placeholder="Search location here..." id='location' name='location' onkeyup="Filter()">
-                            <div class="provinces">
-                            <a  onclick="document.getElementById('location').value='An Giang';document.getElementById('search').submit();">An Giang</a>
-                            <a  onclick="document.getElementById('location').value='Ba Ria Vung Tau';document.getElementById('search').submit();">Ba Ria Vung Tau</a>
-                            <a  onclick="document.getElementById('location').value='Bac Lieu';document.getElementById('search').submit();">Bac Lieu</a>
-                            <a  onclick="document.getElementById('location').value='Bac Kan';document.getElementById('search').submit();">Bac Kan</a>
-                            <a  onclick="document.getElementById('location').value='Bac Giang';document.getElementById('search').submit();">Bac Giang</a>
-                            <a  onclick="document.getElementById('location').value='Bac Ninh';document.getElementById('search').submit();">Bac Ninh</a>
-                            <a  onclick="document.getElementById('location').value='Ben Tre';document.getElementById('search').submit();">Ben Tre</a>
-                            <a  onclick="document.getElementById('location').value='Binh Duong';document.getElementById('search').submit();">Binh Duong</a>
-                            <a  onclick="document.getElementById('location').value='Binh Dinh';document.getElementById('search').submit();">Binh Dinh</a>
-                            <a  onclick="document.getElementById('location').value='Binh Phuoc';document.getElementById('search').submit();">Binh Phuoc</a>
-                            <a  onclick="document.getElementById('location').value='Binh Thuan';document.getElementById('search').submit();">Binh Thuan</a>
-                            <a  onclick="document.getElementById('location').value='Ca Mau';document.getElementById('search').submit();">Ca Mau</a>
-                            <a  onclick="document.getElementById('location').value='Cao Bang';document.getElementById('search').submit();">Cao Bang</a>
-                            <a  onclick="document.getElementById('location').value='Can Tho';document.getElementById('search').submit();">Can Tho</a>
-                            <a  onclick="document.getElementById('location').value='Da Nang';document.getElementById('search').submit();">Da Nang</a>
-                            <a  onclick="document.getElementById('location').value='Dak Lak';document.getElementById('search').submit();">Dak Lak</a>
-                            <a  onclick="document.getElementById('location').value='Dak Nong';document.getElementById('search').submit();">Dak Nong</a>
-                            <a  onclick="document.getElementById('location').value='Dien Bien';document.getElementById('search').submit();">Dien Bien</a>
-                            <a  onclick="document.getElementById('location').value='Dong Nai';document.getElementById('search').submit();">Dong Nai</a>
-                            <a  onclick="document.getElementById('location').value='Dong Thap';document.getElementById('search').submit();">Dong Thap</a>
-                            <a  onclick="document.getElementById('location').value='Gia Lai';document.getElementById('search').submit();">Gia Lai</a>
-                            <a  onclick="document.getElementById('location').value='Ha Giang';document.getElementById('search').submit();">Ha Giang</a>
-                            <a  onclick="document.getElementById('location').value='Ha Nam';document.getElementById('search').submit();">Ha Nam</a>
-                            <a  onclick="document.getElementById('location').value='Ha Noi';document.getElementById('search').submit();">Ha Noi</a>
-                            <a  onclick="document.getElementById('location').value='Ha Tay';document.getElementById('search').submit();">Ha Tay</a>
-                            <a  onclick="document.getElementById('location').value='Ha Tinh';document.getElementById('search').submit();">Ha Tinh</a>
-                            <a  onclick="document.getElementById('location').value='Hai Duong';document.getElementById('search').submit();">Hai Duong</a>
-                            <a  onclick="document.getElementById('location').value='Hai Phong';document.getElementById('search').submit();">Hai Phong</a>
-                            <a  onclick="document.getElementById('location').value='Hoa Binh';document.getElementById('search').submit();">Hoa Binh</a>
-                            <a  onclick="document.getElementById('location').value='Ho Chi Minh';document.getElementById('search').submit();">Ho Chi Minh</a>
-                            <a  onclick="document.getElementById('location').value='Hau Giang';document.getElementById('search').submit();">Hau Giang</a>
-                            <a  onclick="document.getElementById('location').value='Hung Yen';document.getElementById('search').submit();">Hung Yen</a>
-                            <a  onclick="document.getElementById('location').value='Khanh Hoa';document.getElementById('search').submit();">Khanh Hoa</a>
-                            <a  onclick="document.getElementById('location').value='Kien Giang';document.getElementById('search').submit();">Kien Giang</a>
-                            <a  onclick="document.getElementById('location').value='Kon Tum';document.getElementById('search').submit();">Kon Tum</a>
-                            <a  onclick="document.getElementById('location').value='Lai Chau';document.getElementById('search').submit();">Lai Chau</a>
-                            <a  onclick="document.getElementById('location').value='Lao Cai';document.getElementById('search').submit();">Lao Cai</a>
-                            <a  onclick="document.getElementById('location').value='Lang Son';document.getElementById('search').submit();">Lang Son</a>
-                            <a  onclick="document.getElementById('location').value='Lam Dong';document.getElementById('search').submit();">Lam Dong</a>
-                            <a  onclick="document.getElementById('location').value='Long An';document.getElementById('search').submit();">Long An</a>
-                            <a  onclick="document.getElementById('location').value='Nam Dinh';document.getElementById('search').submit();">Nam Dinh</a>
-                            <a  onclick="document.getElementById('location').value='Nghe An';document.getElementById('search').submit();">Nghe An</a>
-                            <a  onclick="document.getElementById('location').value='Ninh Binh';document.getElementById('search').submit();">Ninh Binh</a>
-                            <a  onclick="document.getElementById('location').value='Ninh Thuan';document.getElementById('search').submit();">Ninh Thuan</a>
-                            <a  onclick="document.getElementById('location').value='Phu Tho';document.getElementById('search').submit();">Phu Tho</a>
-                            <a  onclick="document.getElementById('location').value='Phu Yen';document.getElementById('search').submit();">Phu Yen</a>
-                            <a  onclick="document.getElementById('location').value='Quang Binh';document.getElementById('search').submit();">Quang Binh</a>
-                            <a  onclick="document.getElementById('location').value='Quang Nam';document.getElementById('search').submit();">Quang Nam</a>
-                            <a  onclick="document.getElementById('location').value='Quang Ngai';document.getElementById('search').submit();">Quang Ngai</a>
-                            <a  onclick="document.getElementById('location').value='Quang Ninh';document.getElementById('search').submit();">Quang Ninh</a>
-                            <a  onclick="document.getElementById('location').value='Quang Tri';document.getElementById('search').submit();">Quang Tri</a>
-                            <a  onclick="document.getElementById('location').value='Soc Trang';document.getElementById('search').submit();">Soc Trang</a>
-                            <a  onclick="document.getElementById('location').value='Son La';document.getElementById('search').submit();">Son La</a>
-                            <a  onclick="document.getElementById('location').value='Tay Ninh';document.getElementById('search').submit();">Tay Ninh</a>
-                            <a  onclick="document.getElementById('location').value='Thai Binh';document.getElementById('search').submit();">Thai Binh</a>
-                            <a  onclick="document.getElementById('location').value='Thai Nguyen';document.getElementById('search').submit();">Thai Nguyen</a>
-                            <a  onclick="document.getElementById('location').value='Thanh Hoa';document.getElementById('search').submit();">Thanh Hoa</a>
-                            <a  onclick="document.getElementById('location').value='Thua Thien Hue';document.getElementById('search').submit();">Thua Thien Hue</a>
-                            <a  onclick="document.getElementById('location').value='Tien Giang';document.getElementById('search').submit();">Tien Giang</a>
-                            <a  onclick="document.getElementById('location').value='Tra Vinh';document.getElementById('search').submit();">Tra Vinh</a>
-                            <a  onclick="document.getElementById('location').value='Tuyen Quang';document.getElementById('search').submit();">Tuyen Quang</a>
-                            <a  onclick="document.getElementById('location').value='Vinh Long';document.getElementById('search').submit();">Vinh Long</a>
-                            <a  onclick="document.getElementById('location').value='Vinh Phuc';document.getElementById('search').submit();">Vinh Phuc</a>
-                            <a  onclick="document.getElementById('location').value='Yen Bai';document.getElementById('search').submit();">Yen Bai</a>
+                            <div id="hidingScrollBar">
+                                <div class="provinces">
+                                    <a  onclick="document.getElementById('location').value='An Giang';document.getElementById('search').submit();">An Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Ba Ria Vung Tau';document.getElementById('search').submit();">Ba Ria Vung Tau</a>
+                                    <a  onclick="document.getElementById('location').value='Bac Lieu';document.getElementById('search').submit();">Bac Lieu</a>
+                                    <a  onclick="document.getElementById('location').value='Bac Kan';document.getElementById('search').submit();">Bac Kan</a>
+                                    <a  onclick="document.getElementById('location').value='Bac Giang';document.getElementById('search').submit();">Bac Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Bac Ninh';document.getElementById('search').submit();">Bac Ninh</a>
+                                    <a  onclick="document.getElementById('location').value='Ben Tre';document.getElementById('search').submit();">Ben Tre</a>
+                                    <a  onclick="document.getElementById('location').value='Binh Duong';document.getElementById('search').submit();">Binh Duong</a>
+                                    <a  onclick="document.getElementById('location').value='Binh Dinh';document.getElementById('search').submit();">Binh Dinh</a>
+                                    <a  onclick="document.getElementById('location').value='Binh Phuoc';document.getElementById('search').submit();">Binh Phuoc</a>
+                                    <a  onclick="document.getElementById('location').value='Binh Thuan';document.getElementById('search').submit();">Binh Thuan</a>
+                                    <a  onclick="document.getElementById('location').value='Ca Mau';document.getElementById('search').submit();">Ca Mau</a>
+                                    <a  onclick="document.getElementById('location').value='Cao Bang';document.getElementById('search').submit();">Cao Bang</a>
+                                    <a  onclick="document.getElementById('location').value='Can Tho';document.getElementById('search').submit();">Can Tho</a>
+                                    <a  onclick="document.getElementById('location').value='Da Nang';document.getElementById('search').submit();">Da Nang</a>
+                                    <a  onclick="document.getElementById('location').value='Dak Lak';document.getElementById('search').submit();">Dak Lak</a>
+                                    <a  onclick="document.getElementById('location').value='Dak Nong';document.getElementById('search').submit();">Dak Nong</a>
+                                    <a  onclick="document.getElementById('location').value='Dien Bien';document.getElementById('search').submit();">Dien Bien</a>
+                                    <a  onclick="document.getElementById('location').value='Dong Nai';document.getElementById('search').submit();">Dong Nai</a>
+                                    <a  onclick="document.getElementById('location').value='Dong Thap';document.getElementById('search').submit();">Dong Thap</a>
+                                    <a  onclick="document.getElementById('location').value='Gia Lai';document.getElementById('search').submit();">Gia Lai</a>
+                                    <a  onclick="document.getElementById('location').value='Ha Giang';document.getElementById('search').submit();">Ha Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Ha Nam';document.getElementById('search').submit();">Ha Nam</a>
+                                    <a  onclick="document.getElementById('location').value='Ha Noi';document.getElementById('search').submit();">Ha Noi</a>
+                                    <a  onclick="document.getElementById('location').value='Ha Tay';document.getElementById('search').submit();">Ha Tay</a>
+                                    <a  onclick="document.getElementById('location').value='Ha Tinh';document.getElementById('search').submit();">Ha Tinh</a>
+                                    <a  onclick="document.getElementById('location').value='Hai Duong';document.getElementById('search').submit();">Hai Duong</a>
+                                    <a  onclick="document.getElementById('location').value='Hai Phong';document.getElementById('search').submit();">Hai Phong</a>
+                                    <a  onclick="document.getElementById('location').value='Hoa Binh';document.getElementById('search').submit();">Hoa Binh</a>
+                                    <a  onclick="document.getElementById('location').value='Ho Chi Minh';document.getElementById('search').submit();">Ho Chi Minh</a>
+                                    <a  onclick="document.getElementById('location').value='Hau Giang';document.getElementById('search').submit();">Hau Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Hung Yen';document.getElementById('search').submit();">Hung Yen</a>
+                                    <a  onclick="document.getElementById('location').value='Khanh Hoa';document.getElementById('search').submit();">Khanh Hoa</a>
+                                    <a  onclick="document.getElementById('location').value='Kien Giang';document.getElementById('search').submit();">Kien Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Kon Tum';document.getElementById('search').submit();">Kon Tum</a>
+                                    <a  onclick="document.getElementById('location').value='Lai Chau';document.getElementById('search').submit();">Lai Chau</a>
+                                    <a  onclick="document.getElementById('location').value='Lao Cai';document.getElementById('search').submit();">Lao Cai</a>
+                                    <a  onclick="document.getElementById('location').value='Lang Son';document.getElementById('search').submit();">Lang Son</a>
+                                    <a  onclick="document.getElementById('location').value='Lam Dong';document.getElementById('search').submit();">Lam Dong</a>
+                                    <a  onclick="document.getElementById('location').value='Long An';document.getElementById('search').submit();">Long An</a>
+                                    <a  onclick="document.getElementById('location').value='Nam Dinh';document.getElementById('search').submit();">Nam Dinh</a>
+                                    <a  onclick="document.getElementById('location').value='Nghe An';document.getElementById('search').submit();">Nghe An</a>
+                                    <a  onclick="document.getElementById('location').value='Ninh Binh';document.getElementById('search').submit();">Ninh Binh</a>
+                                    <a  onclick="document.getElementById('location').value='Ninh Thuan';document.getElementById('search').submit();">Ninh Thuan</a>
+                                    <a  onclick="document.getElementById('location').value='Phu Tho';document.getElementById('search').submit();">Phu Tho</a>
+                                    <a  onclick="document.getElementById('location').value='Phu Yen';document.getElementById('search').submit();">Phu Yen</a>
+                                    <a  onclick="document.getElementById('location').value='Quang Binh';document.getElementById('search').submit();">Quang Binh</a>
+                                    <a  onclick="document.getElementById('location').value='Quang Nam';document.getElementById('search').submit();">Quang Nam</a>
+                                    <a  onclick="document.getElementById('location').value='Quang Ngai';document.getElementById('search').submit();">Quang Ngai</a>
+                                    <a  onclick="document.getElementById('location').value='Quang Ninh';document.getElementById('search').submit();">Quang Ninh</a>
+                                    <a  onclick="document.getElementById('location').value='Quang Tri';document.getElementById('search').submit();">Quang Tri</a>
+                                    <a  onclick="document.getElementById('location').value='Soc Trang';document.getElementById('search').submit();">Soc Trang</a>
+                                    <a  onclick="document.getElementById('location').value='Son La';document.getElementById('search').submit();">Son La</a>
+                                    <a  onclick="document.getElementById('location').value='Tay Ninh';document.getElementById('search').submit();">Tay Ninh</a>
+                                    <a  onclick="document.getElementById('location').value='Thai Binh';document.getElementById('search').submit();">Thai Binh</a>
+                                    <a  onclick="document.getElementById('location').value='Thai Nguyen';document.getElementById('search').submit();">Thai Nguyen</a>
+                                    <a  onclick="document.getElementById('location').value='Thanh Hoa';document.getElementById('search').submit();">Thanh Hoa</a>
+                                    <a  onclick="document.getElementById('location').value='Thua Thien Hue';document.getElementById('search').submit();">Thua Thien Hue</a>
+                                    <a  onclick="document.getElementById('location').value='Tien Giang';document.getElementById('search').submit();">Tien Giang</a>
+                                    <a  onclick="document.getElementById('location').value='Tra Vinh';document.getElementById('search').submit();">Tra Vinh</a>
+                                    <a  onclick="document.getElementById('location').value='Tuyen Quang';document.getElementById('search').submit();">Tuyen Quang</a>
+                                    <a  onclick="document.getElementById('location').value='Vinh Long';document.getElementById('search').submit();">Vinh Long</a>
+                                    <a  onclick="document.getElementById('location').value='Vinh Phuc';document.getElementById('search').submit();">Vinh Phuc</a>
+                                    <a  onclick="document.getElementById('location').value='Yen Bai';document.getElementById('search').submit();">Yen Bai</a>
+                                    </div>
                             </div>
                         </div>   
                     </form>
